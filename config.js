@@ -44,6 +44,7 @@ module.exports = {
       codepen: '',
       youtube: '',
       soundcloud: '',
+      medium: '@bg43179'
     }
   }
 };
