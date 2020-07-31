@@ -20,9 +20,8 @@ const Post = ({ post }: Props) => {
 
   return (
     <div className={styles['post']}>
-      <Link className={styles['post__home-button']} to="/">All Articles</Link>
-
       <div className={styles['post__content']}>
+        <Link className={styles['post__home-button']} to="/">Back</Link>
         <Content body={html} title={title} />
       </div>
 
@@ -30,10 +29,6 @@ const Post = ({ post }: Props) => {
         <Meta date={date} />
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
         <Author />
-      </div>
-
-      <div className={styles['post__comments']}>
-        <Comments postSlug={slug} postTitle={post.frontmatter.title} />
       </div>
     </div>
   );
