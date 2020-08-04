@@ -2,7 +2,7 @@
 title: Personal website with Gatsby
 date: "2020-07-26"
 template: "post"
-draft: false
+draft: true
 slug: "personal-website-gatsby"
 category: "web development"
 tags:
