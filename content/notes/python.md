@@ -50,8 +50,9 @@ result = list(reversed(arr))
 ```
 
 ## Collection
-  
-  - `defaultdict`
+
+- `defaultdict`
+
 ```python
 import collections
 
@@ -60,7 +61,10 @@ dic = collection.defaultdict(0)
 
 # Init a dict with []
 dic = collection.defaultdict[]
+```
 
+```
+Colloetcions.counter
 ```
 
 ## Heapq
@@ -85,10 +89,6 @@ heapq.heapify(max_heap)
 heapq.heappush(max_heap, 4*-1) 
 ```
 
-```
-Colloetcions.counter
-```
-
 ## Queue
 - Complexity
   - popleft: `O(1)`
@@ -104,7 +104,6 @@ queue.append(4) #[2,3,4]
 ```
 
 - `bisect.bisect`
-```
 
 ```python
 import bisect
