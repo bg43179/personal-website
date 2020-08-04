@@ -1,7 +1,7 @@
 // @flow strict
 import React from 'react';
-import { getContactHref, getIcon } from '../../../utils';
-import Icon from '../../Icon';
+import { getContactHref } from '../../../utils';
+import FontAwesome from 'react-fontawesome';
 import styles from './Contacts.module.scss';
 
 type Props = {
@@ -21,7 +21,7 @@ const Contacts = ({ contacts }: Props) => (
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icon name={name} icon={getIcon(name)} />
+            <FontAwesome name={name} />
           </a>
         </li>
       )))}

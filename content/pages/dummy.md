@@ -1,6 +1,5 @@
 ---
-title: "Contact me"
+title: "Dummy"
 template: "page"
 socialImage: "dummy_content"
 ---
-
