@@ -2,7 +2,7 @@
 import React from 'react';
 import { getContactHref } from '../../../utils';
 import FontAwesome from 'react-fontawesome';
-import styles from './Contacts.module.scss';
+import { Button, ButtonGroup } from 'react-bootstrap'
 
 type Props = {
   contacts: {
@@ -10,23 +10,23 @@ type Props = {
   },
 };
 
-const Contacts = ({ contacts }: Props) => (
-  <div className={styles['contacts']}>
-    <ul className={styles['contacts__list']}>
+const Contacts = ({ contacts }: Props) => {
+  return (
+    <ButtonGroup className="mb-2">
       {Object.keys(contacts).map((name) => (!contacts[name] ? null : (
-        <li className={styles['contacts__list-item']} key={name}>
-          <a
-            className={styles['contacts__list-item-link']}
-            href={getContactHref(name, contacts[name])}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FontAwesome name={name} />
-          </a>
-        </li>
+        <Button
+          size="lg"
+          className="mx-"
+          variant='outline-dark'
+          href={getContactHref(name, contacts[name])}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <FontAwesome name={name} />
+        </Button>
       )))}
-    </ul>
-  </div>
-);
+    </ButtonGroup>
+  )
+};
 
 export default Contacts;
