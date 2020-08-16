@@ -34,6 +34,16 @@ const createPages = async ({ graphql, actions }) => {
   });
 
   createPage({
+    path: '/',
+    component: path.resolve('./src/components/Page/About.js')
+  })
+
+  createPage({
+    path: '/about',
+    component: path.resolve('./src/components/Page/About.js')
+  })
+
+  createPage({
     path: '/about/resume',
     component: path.resolve('./src/components/Page/Resume.js')
   })
