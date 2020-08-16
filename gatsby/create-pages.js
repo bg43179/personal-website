@@ -33,6 +33,16 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve('./src/templates/notes-list-template.js')
   });
 
+  createPage({
+    path: '/about/resume',
+    component: path.resolve('./src/components/Page/Resume.js')
+  })
+
+  createPage({
+    path: '/resume',
+    component: path.resolve('./src/components/Page/Resume.js')
+  })
+
   // Posts and pages from markdown
   const result = await graphql(`
     {
