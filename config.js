@@ -7,8 +7,8 @@ module.exports = {
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
-  postsPerPage: 4,
-  notesPerPage: 4,
+  postsPerPage: 10,
+  notesPerPage: 10,
   googleAnalyticsId: 'UA-73379983-2',
   useKatex: false,
   menu: [
@@ -22,7 +22,7 @@ module.exports = {
     }
   ],
   author: {
-    name: 'Yaha-Chung (Andrew) Chen',
+    name: 'Andrew Chen',
     photo: '/profile.jpg',
     bio: 'Software Enginner @ San Diego',
     contacts: {
