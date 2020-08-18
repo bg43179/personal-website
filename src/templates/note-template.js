@@ -5,7 +5,9 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
 import { useSiteMetadata } from '../hooks';
+import FontAwesome from 'react-fontawesome';
 import type { MarkdownRemark } from '../types';
+import { Link } from 'gatsby';
 
 type Props = {
   data: {
@@ -21,9 +23,15 @@ const NoteTemplate = ({ data }: Props) => {
   const metaDescription = pageDescription !== null ? pageDescription : siteSubtitle;
 
   return (
-    <Layout title={`${pageTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage} >
+    <Layout title={`${pageTitle} - ${siteTitle}`} >
       <Sidebar />
-      <Page title={pageTitle}>
+      <Page>
+        <div className="d-flex align-items-center">
+          <h1>{pageTitle}</h1>
+          <Link to={'/notes'} className="ml-auto mt-5 btn btn-outline-dark rounded-pill">
+            <FontAwesome name="chevron-circle-left mx-2"/><span>Back</span>
+          </Link>
+        </div>
         <div dangerouslySetInnerHTML={{ __html: pageBody }} />
       </Page>
     </Layout>

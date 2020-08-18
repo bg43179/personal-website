@@ -6,6 +6,7 @@ import Sidebar from '../components/Sidebar';
 import Layout from '../components/Layout';
 import Page from '../components/Page';
 import { useSiteMetadata, useNotesList } from '../hooks';
+import FontAwesome from 'react-fontawesome';
 
 const NotesListTemplate = () => {
   const { title, subtitle } = useSiteMetadata();
@@ -15,17 +16,18 @@ const NotesListTemplate = () => {
     <Layout title={`Learning Notes - ${title}`} description={subtitle}>
       <Sidebar />
       <Page title="Learning Notes">
-        <ul>
-          {notes.map((note) => (
-            <li key={note.fieldValue}>
-              <Link style={{fontSize: "20px"}} 
-                to={`/notes/${kebabCase(note.fieldValue)}`}
-              >
-                {note.fieldValue}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {notes.map((note) => (
+          <li style={{listStyle: 'none'}} className="py-3" key={note.fieldValue}>
+            <Link 
+              style={{fontSize: "20px"}} 
+              className='btn-link btn text-dark'
+              to={`/notes/${kebabCase(note.fieldValue)}`}
+            >
+              <FontAwesome name="book mr-3" />
+              {note.fieldValue}
+            </Link>
+          </li>
+        ))}
       </Page>
     </Layout>
   );

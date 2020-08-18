@@ -6,7 +6,6 @@ draft: false
 slug: "git"
 note: "Git"
 ---
-
 ## Git status
 Inculde Untracked file
 ```bash

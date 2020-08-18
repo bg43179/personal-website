@@ -6,8 +6,6 @@ draft: false
 slug: "active-record"
 note: "Active Record"
 ---
-# Active Record Learning Notes
-
 ## includes
   - [Read](https://engineering.gusto.com/a-visual-guide-to-using-includes-in-rails/)
 ### How to use includes
