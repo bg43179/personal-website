@@ -25,7 +25,7 @@ import {
   FaGraduationCap,
   FaIdCard,
   FaTools 
-} from "react-icons/Fa";
+} from "react-icons/fa";
 
 const About = () => {
   return (

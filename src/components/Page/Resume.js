@@ -1,19 +1,19 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { FaChevronCircleLeft } from 'react-icons/fa';
 import { Document, Page as PdfPage } from 'react-pdf';
 import Layout from '../Layout';
 import Page from '../Page';
 import Sidebar from '../Sidebar';
-import { FaChevronCircleLeft } from "react-icons/Fa";
-import { Link } from 'gatsby';
 
 const Spinner = () => {
   return (
-  <div class="text-center">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+    <div class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
-  </div>
-  )
+  );
 };
 
 const Resume = () => {

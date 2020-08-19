@@ -1,6 +1,6 @@
 // @flow strict
 import React from 'react';
-import { Button, Nav } from 'react-bootstrap'
+import { Button, Nav } from 'react-bootstrap';
 
 type Props = {
   menu: {
@@ -23,7 +23,7 @@ const Menu = ({ menu }: Props) => {
         </Nav.Link>
       ))}
     </Nav>
-  )
+  );
 };
 
 export default Menu;

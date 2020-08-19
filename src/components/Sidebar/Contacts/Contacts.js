@@ -1,8 +1,8 @@
 // @flow strict
 import React from 'react';
+import { FaGithub, FaMedium, FaLinkedin } from 'react-icons/fa';
+import { Button, ButtonGroup } from 'react-bootstrap';
 import { getContactHref } from '../../../utils';
-import { FaGithub, FaMedium, FaLinkedin } from "react-icons/Fa";
-import { Button, ButtonGroup } from 'react-bootstrap'
 
 type Props = {
   contacts: {
@@ -19,8 +19,8 @@ const Contacts = ({ contacts }: Props) => {
         return <FaMedium />;
       default:
         return <FaLinkedin />;
-      }
-  }
+    }
+  };
 
   return (
     <ButtonGroup className="mb-2">
@@ -37,7 +37,7 @@ const Contacts = ({ contacts }: Props) => {
         </Button>
       )))}
     </ButtonGroup>
-  )
+  );
 };
 
 export default Contacts;

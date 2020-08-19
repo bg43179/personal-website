@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styles from './Content.module.scss';
-import { FaChevronCircleLeft } from "react-icons/Fa";
+import { FaChevronCircleLeft } from "react-icons/fa";
 
 type Props = {
   body: string,
