@@ -3,7 +3,7 @@ import { Document, Page as PdfPage } from 'react-pdf';
 import Layout from '../Layout';
 import Page from '../Page';
 import Sidebar from '../Sidebar';
-import FontAwesome from 'react-fontawesome';
+import { FaChevronCircleLeft } from "react-icons/Fa";
 import { Link } from 'gatsby';
 
 const Spinner = () => {
@@ -23,7 +23,7 @@ const Resume = () => {
       <Page>
         <React.Fragment>
           <Link to={'/about'} className="btn btn-outline-dark rounded-pill">
-          <FontAwesome name="chevron-circle-left mx-2"/><span>Back</span>
+          <FaChevronCircleLeft/><span className="mx-2" >Back</span>
           </Link>
           <Document file={"../../resume.pdf"} loading={Spinner} >
             <PdfPage width={'1000'} scale={1} renderMode={"canvas"} pageNumber={1}/>

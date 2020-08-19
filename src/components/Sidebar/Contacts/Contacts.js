@@ -1,7 +1,7 @@
 // @flow strict
 import React from 'react';
 import { getContactHref } from '../../../utils';
-import FontAwesome from 'react-fontawesome';
+import { FaGithub, FaMedium, FaLinkedin } from "react-icons/Fa";
 import { Button, ButtonGroup } from 'react-bootstrap'
 
 type Props = {
@@ -11,6 +11,17 @@ type Props = {
 };
 
 const Contacts = ({ contacts }: Props) => {
+  const mapping = (name) => {
+    switch (name) {
+      case 'github':
+        return <FaGithub />;
+      case 'medium':
+        return <FaMedium />;
+      default:
+        return <FaLinkedin />;
+      }
+  }
+
   return (
     <ButtonGroup className="mb-2">
       {Object.keys(contacts).map((name) => (!contacts[name] ? null : (
@@ -22,7 +33,7 @@ const Contacts = ({ contacts }: Props) => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <FontAwesome name={name} />
+          {mapping(name)}
         </Button>
       )))}
     </ButtonGroup>

@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar';
 import Layout from '../components/Layout';
 import Page from '../components/Page';
 import { useSiteMetadata, useNotesList } from '../hooks';
-import FontAwesome from 'react-fontawesome';
+import { FaBook } from "react-icons/Fa";
 
 const NotesListTemplate = () => {
   const { title, subtitle } = useSiteMetadata();
@@ -23,7 +23,7 @@ const NotesListTemplate = () => {
               className='btn-link btn text-dark'
               to={`/notes/${kebabCase(note.fieldValue)}`}
             >
-              <FontAwesome name="book mr-3" />
+              <FaBook className="mr-3" />
               {note.fieldValue}
             </Link>
           </li>

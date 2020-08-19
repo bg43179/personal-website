@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
 import { useSiteMetadata } from '../hooks';
-import FontAwesome from 'react-fontawesome';
+import { FaChevronCircleLeft } from "react-icons/Fa";
 import type { MarkdownRemark } from '../types';
 import { Link } from 'gatsby';
 
@@ -29,7 +29,7 @@ const NoteTemplate = ({ data }: Props) => {
         <div className="d-flex align-items-center">
           <h1>{pageTitle}</h1>
           <Link to={'/notes'} className="ml-auto mt-5 btn btn-outline-dark rounded-pill">
-            <FontAwesome name="chevron-circle-left mx-2"/><span>Back</span>
+            <FaChevronCircleLeft name="chevron-circle-left"/><span className="mx-2" >Back</span>
           </Link>
         </div>
         <div dangerouslySetInnerHTML={{ __html: pageBody }} />

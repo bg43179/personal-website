@@ -3,15 +3,12 @@ import Layout from '../Layout';
 import Page from '../Page';
 import Sidebar from '../Sidebar';
 import { Link } from 'gatsby';
-import FontAwesome from 'react-fontawesome';
 import { Card, Col, Row } from 'react-bootstrap'
 import { 
   DiBootstrap,
   DiJavascript1,
-  DiDocker,
   DiGitBranch,
   DiJava,
-  DiNodejs,
   DiMysql,
   DiPython,
   DiReact,
@@ -22,7 +19,13 @@ import {
   DiSpark
 } from "react-icons/di";
 import { GrGraphQl } from "react-icons/Gr";
-import { FaDocker, FaNodeJs } from "react-icons/Fa";
+import { 
+  FaDocker, 
+  FaNodeJs,
+  FaGraduationCap,
+  FaIdCard,
+  FaTools 
+} from "react-icons/Fa";
 
 const About = () => {
   return (
@@ -32,12 +35,12 @@ const About = () => {
         <div className="d-flex align-items-center pb-4" >
           <h1 className="my-4">In a galaxy far away...</h1>
           <Link to={"resume"} className="mt-3 ml-auto btn-outline-dark btn btn-lg"> 
-            <FontAwesome name="id-card" /><span className="mx-2">Resume</span>
+            <FaIdCard /><span className="mx-2">Resume</span>
           </Link>
         </div>
         <Card className="mb-4">
           <Card.Header>
-            <FontAwesome name="graduation-cap" />
+            <FaGraduationCap />
             <span className="mx-3">Work</span>
           </Card.Header>
           <Card.Body>
@@ -57,7 +60,7 @@ const About = () => {
         </Card>
         <Card className="mb-4">
           <Card.Header>
-            <FontAwesome name="graduation-cap" />
+            <FaGraduationCap />
             <span className="mx-3">Education</span>
           </Card.Header>
           <Card.Body>
@@ -77,7 +80,7 @@ const About = () => {
         </Card>
         <Card>
           <Card.Header>
-            <FontAwesome name="tools" />
+            <FaTools />
             <span className="mx-3">Skills</span>
           </Card.Header>
           <Card.Body>
