@@ -16,10 +16,10 @@ const Page = ({ title, children }: Props) => {
   return (
     <div ref={pageRef} className={styles['page']}>
       <div className={styles['page__inner']}>
-        { title && 
-          <div className="d-flex align-items-center" >
-            <h1 className="my-4">{title}</h1>
-          </div>
+        { title
+          && <div className="d-flex align-items-center" >
+              <h1 className="my-4">{title}</h1>
+            </div>
         }
         <div className={styles['page__body']}>
           {children}

@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { FaChevronCircleLeft } from 'react-icons/fa';
@@ -15,7 +14,7 @@ type Props = {
 };
 
 const NoteTemplate = ({ data }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: siteTitle } = useSiteMetadata();
   const { html: pageBody } = data.markdownRemark;
   const { frontmatter } = data.markdownRemark;
   const { title: pageTitle } = frontmatter;

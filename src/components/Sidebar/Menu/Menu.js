@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import { Button, Nav } from 'react-bootstrap';
 
@@ -9,7 +8,7 @@ type Props = {
   }[]
 };
 
-const Menu = ({ menu }: Props) => {
+const Menu = ({ menu }: Props) => { //eslint-disable-line arrow-body-style, spaced-comment
   return (
     <Nav className="flex-column py-4 rounded">
       {menu.map((item) => (

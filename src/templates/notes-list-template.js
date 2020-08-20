@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
@@ -19,7 +18,7 @@ const NotesListTemplate = () => {
         {notes.map((note) => (
           <li style={{ listStyle: 'none' }} className="py-3" key={note.fieldValue}>
             <Link
-              style={{ fontSize: "20px" }}
+              style={{ fontSize: '20px' }}
               className="btn-link btn text-dark"
               to={`/notes/${kebabCase(note.fieldValue)}`}
             >
