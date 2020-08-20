@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import { FaGithub, FaMedium, FaLinkedin } from 'react-icons/fa';
 import { Button, ButtonGroup } from 'react-bootstrap';
