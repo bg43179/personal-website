@@ -23,7 +23,7 @@ module.exports = {
   ],
   author: {
     name: 'Andrew Chen',
-    photo: './profile.jpg',
+    photo: '/profile.jpg',
     bio: 'Software Enginner @ San Diego',
     contacts: {
       email: '',

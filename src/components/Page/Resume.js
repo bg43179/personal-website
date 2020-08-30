@@ -25,7 +25,7 @@ const Resume = () => { //eslint-disable-line arrow-body-style, spaced-comment
           <Link to='/about' className="btn btn-outline-dark rounded-pill">
           <FaChevronCircleLeft/><span className="mx-2" >Back</span>
           </Link>
-          <Document file='../../resume.pdf' loading={Spinner} >
+          <Document file='/resume.pdf' loading={Spinner} >
             <PdfPage width='1000' scale={1} renderMode='canvas' pageNumber={1}/>
           </Document>
         </React.Fragment>
