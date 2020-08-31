@@ -25,8 +25,7 @@ const Contacts = ({ contacts }: Props) => {
     <ButtonGroup className="mb-2">
       {Object.keys(contacts).map((name) => (!contacts[name] ? null : (
         <Button
-          size="lg"
-          className="mx-"
+          className="rounded-circle mr-2"
           variant='outline-dark'
           href={getContactHref(name, contacts[name])}
           rel="noopener noreferrer"
