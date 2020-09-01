@@ -24,7 +24,7 @@ module.exports = {
   author: {
     name: 'Andrew Chen',
     photo: '/profile.jpg',
-    bio: 'Software Enginner @ San Diego',
+    bio: "",
     contacts: {
       email: '',
       facebook: '',
