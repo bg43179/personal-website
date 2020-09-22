@@ -1,5 +1,10 @@
 import React from 'react';
-import { FaGithub, FaMedium, FaLinkedin } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaMedium,
+  FaLinkedin,
+  FaEnvelope
+} from 'react-icons/fa';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { getContactHref } from '../../../utils';
 
@@ -16,6 +21,8 @@ const Contacts = ({ contacts }: Props) => {
         return <FaGithub />;
       case 'medium':
         return <FaMedium />;
+      case 'email':
+        return <FaEnvelope />;
       default:
         return <FaLinkedin />;
     }

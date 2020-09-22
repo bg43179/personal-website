@@ -26,7 +26,7 @@ module.exports = {
     photo: '/profile.jpg',
     bio: "",
     contacts: {
-      email: '',
+      email: 'bg43179@gmail.com',
       facebook: '',
       telegram: '',
       twitter: '',
