@@ -29,7 +29,7 @@ const About = () => { //eslint-disable-line arrow-body-style, spaced-comment
   return (
     <Base>
       <div className="d-flex align-items-center pb-4" >
-        <h1 className="my-4">In a galaxy far away...</h1>
+        <h1 className="my-4">Profile</h1>
         <Link to='resume' className="mt-3 px-2 ml-auto btn-outline-dark btn btn-lg">
           <FaIdCard /><span className="mx-2">Resume</span>
         </Link>

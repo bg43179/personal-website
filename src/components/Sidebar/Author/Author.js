@@ -33,10 +33,11 @@ const Author = ({ author, isIndex }: Props) => (
         <Link className={styles['author__title-link']} to="/">{author.name}</Link>
       </h2>
     )}
-    <span className="text-muted d-flex flex-column" style={{ fontSize: '16px' }}>
+    <div className="text-muted d-flex flex-column" style={{ fontSize: '16px' }}>
       <span>SDE @ Appfolio</span>
-      <span>MS in CS '19 @ UW-Madison</span>
-    </span>
+      <span>MS CS '19 @ UW-Madison</span>
+      <span className="mt-2">Enthusiastic about creating tools to make life better.</span>
+    </div>
   </div>
 );
 
