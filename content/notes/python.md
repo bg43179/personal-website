@@ -8,7 +8,7 @@ note: "Python"
 ---
 ## Array
 - create array in one line
-  
+
 ```python
 grid = [[0,0,0,0], [0,0,0,0]]
 
@@ -68,11 +68,12 @@ Colloetcions.counter
 ```
 
 ## Heapq
-- heapq is a min-heap (priority queue) 
+- heapq is a min-heap (priority queue)
 - Complexity
-  - heapify: 
-  - heappush:  
-  - heappop:  
+  - heapify: `O(logN)`
+  - heappush: `O(logN)`
+  - heappop: 	`O(logN)`
+  - heappushpop: `O(logN)`
 
 ```python
 import heapq
@@ -86,13 +87,13 @@ heapq.heappush(max_heap,4) # [1 ,4, 3, 7, 5]
 max_heap = [i * -1 for i in l]
 heapq.heapify(max_heap)
 
-heapq.heappush(max_heap, 4*-1) 
+heapq.heappush(max_heap, 4*-1)
 ```
 
 ## Queue
 - Complexity
   - popleft: `O(1)`
-  - append: `O(1)` 
+  - append: `O(1)`
 
 ```python
 from collections import deque
@@ -103,8 +104,16 @@ queue.popleft() #[2,3]
 queue.append(4) #[2,3,4]
 ```
 
-- `bisect.bisect`
+### `bisect`
 
 ```python
 import bisect
+
+data = [2, 3, 4, 7, 9]
+
+bisect.bisect_left(data, 7)
+# 3
+
+bisect.bisect_right(data, 7)
+# 4
 ```
