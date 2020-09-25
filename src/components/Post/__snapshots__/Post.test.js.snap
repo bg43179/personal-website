@@ -2,99 +2,115 @@
 
 exports[`Post renders correctly 1`] = `
 <div
-  className="post"
+  className="mb-4"
 >
-  <a
-    className="post__home-button"
-    href="/"
-  >
-    All Articles
-  </a>
   <div
-    className="post__content"
+    className="post"
   >
     <div
-      className="content"
+      className="post__content"
     >
-      <h1
-        className="content__title"
-      >
-        test
-      </h1>
       <div
-        className="content__body"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>test</p>",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className="post__footer"
-  >
-    <div
-      className="meta"
-    >
-      <p
-        className="meta__date"
+        className="content"
       >
-        Published 
-        1 Sep 2016
-      </p>
-    </div>
-    <div
-      className="tags"
-    >
-      <ul
-        className="tags__list"
-      >
-        <li
-          className="tags__list-item"
-        >
-          <a
-            className="tags__list-item-link"
-            href="/test_0"
-          >
-            test_0
-          </a>
-        </li>
-        <li
-          className="tags__list-item"
-        >
-          <a
-            className="tags__list-item-link"
-            href="/test_1"
-          >
-            test_1
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="author"
-    >
-      <p
-        className="author__bio"
-      >
-        Test bio
         <a
-          className="author__bio-twitter"
-          href="https://www.twitter.com/#"
-          rel="noopener noreferrer"
-          target="_blank"
+          className="d-inline-block mt-4 btn btn-outline-dark rounded-pill"
+          href="/page"
         >
-          <strong>
-            Test name
-          </strong>
-           on Twitter
+          <svg
+            className="mx-2"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+            />
+          </svg>
+          <span>
+            Back
+          </span>
         </a>
-      </p>
+        <h1
+          className="d-flex my-4 justify-content-center"
+        >
+          test
+        </h1>
+        <div
+          className="content__body"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>test</p>",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="post__footer"
+    >
+      <div
+        className="meta"
+      >
+        <p
+          className="meta__date"
+        >
+          Published 
+          1 Sep 2016
+        </p>
+      </div>
+      <div
+        className="tags"
+      >
+        <ul
+          className="tags__list"
+        >
+          <li
+            className="tags__list-item"
+          >
+            <a
+              href="/test_0"
+            >
+              <h3
+                className="mt-0"
+              >
+                <span
+                  className="badge badge-success"
+                >
+                  test_0
+                </span>
+              </h3>
+            </a>
+          </li>
+          <li
+            className="tags__list-item"
+          >
+            <a
+              href="/test_1"
+            >
+              <h3
+                className="mt-0"
+              >
+                <span
+                  className="badge badge-success"
+                >
+                  test_1
+                </span>
+              </h3>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div
-    className="post__comments"
-  />
 </div>
 `;

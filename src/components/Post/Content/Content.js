@@ -10,7 +10,7 @@ type Props = {
 
 const Content = ({ body, title }: Props) => (
   <div className={styles['content']}>
-    <Link className="d-inline-block mt-4 btn btn-outline-dark rounded-pill" to="/">
+    <Link className="d-inline-block mt-4 btn btn-outline-dark rounded-pill" to="/page">
       <FaChevronCircleLeft className="mx-2"/><span>Back</span>
     </Link>
     <h1 className="d-flex my-4 justify-content-center">{title}</h1>

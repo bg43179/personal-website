@@ -1,6 +1,5 @@
 // @flow strict
 import React from 'react';
-import Author from './Author';
 import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
@@ -17,15 +16,16 @@ const Post = ({ post }: Props) => {
   const { tags, title, date } = post.frontmatter;
 
   return (
-    <div className={styles['post']}>
-      <div className={styles['post__content']}>
-        <Content body={html} title={title} />
-      </div>
+    <div className="mb-4">
+      <div className={styles['post']}>
+        <div className={styles['post__content']}>
+          <Content body={html} title={title} />
+        </div>
 
-      <div className={styles['post__footer']}>
-        <Meta date={date} />
-        {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
-        <Author />
+        <div className={styles['post__footer']}>
+          <Meta date={date} />
+          {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
+        </div>
       </div>
     </div>
   );
