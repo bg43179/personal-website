@@ -1,4 +1,4 @@
-/** 
+/**
  * Variables
  */
 
@@ -18,8 +18,7 @@ $typographic-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 $typographic-root-font-size: 100;
 $typographic-base-font-size: 18px;
 $typographic-small-font-size: 14px;
-
-$typographic-base-line-height: 1.625;
+$typographic-base-line-height: 1.4;
 
 $typographic-base-font-color: $color-base;
 $typographic-link-p-font-color: $color-primary;
@@ -31,11 +30,12 @@ $typographic-leading: round(32 * ($typographic-root-font-size / 100) * $typograp
 $button-height: 50px;
 $button-border-radius: 40px;
 
-// Layout
-$layout-post-single-width: 1080px;
-$layout-post-width: $layout-post-single-width - 540px;
 
-$layout-width: 1440px;
+$layout-width: 100%;
 $layout-breakpoint-sm: 685px;
 $layout-breakpoint-md: 960px;
 $layout-breakpoint-lg: 1100px;
+
+// Layout
+$layout-post-single-width: $layout-width * 0.7;
+$layout-post-width: $layout-post-single-width * 0.8;

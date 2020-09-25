@@ -1,12 +1,10 @@
 // @flow strict
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
+import Base from '../containers/Base';
 import Feed from '../components/Feed';
 import Page from '../components/Page';
 import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
 import type { AllMarkdownRemark, PageContext } from '../types';
 
 type Props = {
@@ -15,11 +13,7 @@ type Props = {
 };
 
 const TagTemplate = ({ data, pageContext }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-
   const {
-    tag,
-    currentPage,
     prevPagePath,
     nextPagePath,
     hasPrevPage,
@@ -27,12 +21,10 @@ const TagTemplate = ({ data, pageContext }: Props) => {
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` : `All Posts tagged as "${tag}" - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
-      <Sidebar />
-      <Page title={tag}>
+    <Base>
+      <Page>
         <Feed edges={edges} />
         <Pagination
           prevPagePath={prevPagePath}
@@ -41,7 +33,7 @@ const TagTemplate = ({ data, pageContext }: Props) => {
           hasNextPage={hasNextPage}
         />
       </Page>
-    </Layout>
+    </Base>
   );
 };
 

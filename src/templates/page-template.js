@@ -1,10 +1,8 @@
 // @flow strict
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
-import { useSiteMetadata } from '../hooks';
+import Base from '../containers/Base';
 import type { MarkdownRemark } from '../types';
 
 type Props = {
@@ -14,19 +12,16 @@ type Props = {
 };
 
 const PageTemplate = ({ data }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { html: pageBody } = data.markdownRemark;
   const { frontmatter } = data.markdownRemark;
-  const { title: pageTitle, description: pageDescription, socialImage } = frontmatter;
-  const metaDescription = pageDescription !== null ? pageDescription : siteSubtitle;
+  const { title: pageTitle } = frontmatter;
 
   return (
-    <Layout title={`${pageTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage} >
-      <Sidebar />
+    <Base>
       <Page title={pageTitle}>
         <div dangerouslySetInnerHTML={{ __html: pageBody }} />
       </Page>
-    </Layout>
+    </Base>
   );
 };
 
