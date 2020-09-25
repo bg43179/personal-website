@@ -13,13 +13,16 @@ type Props = {
 };
 
 const Author = ({ author, isIndex }: Props) => (
-  <div className="ml-3 py-4">
+  <div className="mx-3 py-4">
     <Link to="/">
       <img
         src={withPrefix(author.photo)}
         className={styles['author__photo']}
         width="100"
         height="100"
+        style={{
+          opacity: 0.9
+        }}
         alt={author.name}
       />
     </Link>
