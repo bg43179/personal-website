@@ -5,3 +5,8 @@
   color: lighten($color-gray, 18%);
   font-size: $typographic-small-font-size;
 }
+
+.copyright_content {
+  color: lighten($color-gray, 18%);
+  font-size: $typographic-small-font-size * 1.6;
+}
