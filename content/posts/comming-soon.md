@@ -2,7 +2,7 @@
 title: Coming soon
 date: "2020-07-26"
 template: "post"
-draft: false
+draft: true
 slug: "coming-soon"
 category: "coming-soon"
 tags:
