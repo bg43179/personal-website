@@ -45,9 +45,9 @@ The API supports idempotency for safely retrying requests without accidentally p
 ## Rate Limiter [Read](https://stripe.com/blog/rate-limiters)
 
 ### When do you need rate limiter?
-- One of your users is responsible for a `spike in traffic`, and you need to `stay up for everyone else`.
-- One of your users has a `misbehaving script which is accidentally sending you a lot of requests`. Or, even worse, one of your users is intentionally trying to overwhelm your servers.
-- A user is sending you `a lot of lower-priority requests`, and you want to make sure that it doesn’t affect your high-priority traffic.
+- One of your users is responsible for a spike in traffic, and you need to stay up for everyone else.
+- One of your users has a misbehaving script which is accidentally sending you a lot of requests. Or, even worse, one of your users is intentionally trying to overwhelm your servers.
+- A user is sending you a lot of lower-priority requests, and you want to make sure that it doesn’t affect your high-priority traffic.
 - Something in your system has gone wrong internally, and as a result you can’t serve all of your regular traffic and need to drop low-priority requests.
 
 ### Load shedding
