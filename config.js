@@ -5,7 +5,7 @@ module.exports = {
   pathPrefix: '/',
   title: 'Blog by Andrew Chen',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-  copyright: '© All rights reserved.',
+  copyright: '© 2020 Andrew Chen',
   disqusShortname: '',
   postsPerPage: 10,
   notesPerPage: 10,
