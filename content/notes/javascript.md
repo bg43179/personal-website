@@ -8,6 +8,7 @@ note: "Javasript"
 ---
 
 ## Events:
+
 - capturing (trickling): from top(outermost) to button(innermost)
 - bubbling: from button(innermost) to top(outermost)
 
@@ -80,4 +81,61 @@ outer.addEventListener('click',
 trigger outer div
 ```
 
-[Reference](https://segmentfault.com/a/1190000008227026)
+
+### Event Delegation
+
+- Centralization (which makes it possible to monitor events)
+- Tracking (from whom the event came)
+- Filtering
+
+Utilizing bubbling to delegate event. `target` is used here to identify where the event was triggered.
+The benefit is we only have one event listener to track and it can potentailly increase the performance.
+
+Note: `currentTarget` is where you bind the event listener
+
+```javascript
+const outer = document.getElementById('outer');
+outer.addEventListener('click', e=>{
+  switch(e.target.id){
+    case 'middle':
+      console.log('trigger middle div'), true);
+      break;
+    case 'inner':
+      console.log('trigger inner div'), true);
+      break;
+    default:
+      console.log('trigger outer div'), true);
+      break;
+  }
+})
+```
+
+-  [Reference](https://segmentfault.com/a/1190000008227026)
+
+### dispatchEvent
+
+## call, apply, bind
+
+## `this`
+
+## import/export
+```javascript
+import defaultExport from "module-name";
+import * as name from "module-name";
+import { export1 } from "module-name";
+import { export1 as alias1 } from "module-name";
+import { export1 , export2 } from "module-name";
+import { foo , bar } from "module-name/path/to/specific/un-exported/file";
+import { export1 , export2 as alias2 , [...] } from "module-name";
+import defaultExport, { export1 [ , [...] ] } from "module-name";
+import defaultExport, * as name from "module-name";
+import "module-name";
+
+var promise = import("module-name");
+```
+
+- `defaultExport` Name that will refer to the default export from the module.
+- `module-name`: The module to import from. This is often a relative or absolute path name to the .js file containing the module. Certain bundlers may permit or require the use of the extension; check your environment. Only single quoted and double quoted Strings are allowed.
+- `name`: Name of the module object that will be used as a kind of namespace when referring to the imports.
+- `exportN`: Name of the exports to be imported.
+- `aliasN`: Names that will refer to the named imports.
