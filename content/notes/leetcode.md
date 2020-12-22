@@ -31,7 +31,7 @@ note: "Leetcode"
 
 我們稱過去一段的累積總和為 Prefix Sum</br>
 ```
-Sum of subarray(i, j) = PrefixSum[j+1] - PrefixSum[1]`
+Sum of subarray(i, j) = PrefixSum[j] - PrefixSum[i]
 ```
 
 ### Qucik Sort [reference](https://github.com/michaelchen110/Learning-Notes/blob/master/leetcode.py)
@@ -44,7 +44,7 @@ Sum of subarray(i, j) = PrefixSum[j+1] - PrefixSum[1]`
   If set <= pivot or >= pivot, then when one part is always <= pivot or >= pivot, divide and conquer will divide them into [nums] [] and cause inf loop
 
 2. Balance: <br/>
-  Can swap left pivot and right pivot to balance the split, as the result, when `[pivo,  pivot ... pivot]`, it will be divided into two subarray and will not cause inf loop
+  Can swap left pivot and right pivot to balance the split, as the result, when `[pivot,  pivot ... pivot]`, it will be divided into two subarray and will not cause inf loop
 
 3. End status: <br/>
   each time it is done,
@@ -160,3 +160,67 @@ O(N) = O(N-1) + 最後一步
 
 
 序列性 前 i 個 最小 可行性
+
+
+### LRU Cache
+```python
+class ListNode:
+    def __init__(self, key=None, val=None, next=None):
+        self.key = key
+        self.val = val
+        self.next = next
+
+class LRUCache(object):
+    def __init__(self, capacity):
+        """
+        :type capacity: int
+        """
+        self.pos = {}
+        self.dummy = ListNode()
+        self.tail = self.dummy
+        self.capacity = capacity
+
+    def append(self, node):
+        self.pos[node.key] = self.tail
+        self.tail.next = node
+        self.tail = node
+
+    def remove(self, key):
+        prev = self.pos[key]
+        del self.pos[key]
+
+        if prev.next == self.tail:
+            self.tail = prev
+        else:
+            prev.next = prev.next.next
+            # move back pos of next node of removed node
+            self.pos[prev.next.key] = prev
+
+    def get(self, key):
+        """
+        :type key: int
+        :rtype: int
+        """
+        if key not in self.pos:
+            return -1
+
+        value = self.pos[key].next.val
+        self.remove(key)
+        self.append(ListNode(key, value))
+
+        return self.pos[key].next.val
+
+    def put(self, key, value):
+        """
+        :type key: int
+        :type value: int
+        :rtype: void
+        """
+        if key in self.pos:
+            self.remove(key)
+            self.append(ListNode(key, value))
+        else:
+            self.append(ListNode(key, value))
+            if len(self.pos) > self.capacity:
+                self.remove(self.dummy.next.key)
+```
