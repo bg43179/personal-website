@@ -2,37 +2,10 @@
 title: Python
 date: "2020-11-19"
 template: "note"
-draft: true
+draft: false
 slug: "leetcode"
 note: "Leetcode"
 ---
-
-### Prefix Sum
-```python
-[1,3,1,2,] target = 3 #Count 滿足 sum = k 的subarray, k = 3
-```
-首先 需要一個累積總和 (rolling sum) 去確認到當下index的所有數字總和<br/>
-如果能在過去的累積總和當中找到 累積總和 - 目標值k的差值 (意即過去某一index的累積總和) <br/>
-則我們知道 `過去某一段區間的累積總和 + 隨意一段總和為k的區間 = 在當下的累積總和`
-
-```python
-當我們在 index 3 的時候，累積總和為7
-我們知道
-# { 1: 1 }
-# { 4: 1 }
-# { 5: 1 }
-# { 7: 1 }
-```
-累積總和 `7` - 目標值 `3` = 4
-
-過去某一段區間的累積總和 4 (1,3 的累積總和)
-隨意一段總和為k的區間 (此處為 1,2)
-回推我們知道在 index 1 時，累積總和 `4` - 目標值 `3` = `1` 也存在，故在 index 3 之前有兩組滿足目標
-
-我們稱過去一段的累積總和為 Prefix Sum</br>
-```
-Sum of subarray(i, j) = PrefixSum[j] - PrefixSum[i]
-```
 
 ### Qucik Sort [reference](https://github.com/michaelchen110/Learning-Notes/blob/master/leetcode.py)
 
@@ -96,29 +69,55 @@ def binary_search(nums, target):
   if not nums:
     return -1
 
-  left = 0
-  right = len(nums)
+  start, end = 0, len(nums) - 1
 
-  while left + 1 < right:
-    mid = (left + right) / 2
+  while start + 1 < end:
+    mid = (start + end) / 2
 
+    # start | target | mid  | end
+    # start | end (target)
+    # corner case: start(target) | end
     if nums[mid] < target:
-      left = mid + 1
+      start = mid
     else:
-      right = mid
+      end = mid
 
-  if nums[left] == target:
-    return left
-  elif nums[right] == target:
-    return right
+  if nums[start] == target:
+    return start
+  elif nums[end] == target:
+    return end
   else:
     return -1
 ```
 
 ### Linked List
-```python
-# reverse LinkedList
 
+- slow and fast ptrs
+
+```python
+# prev = None
+
+slow = fast = head
+
+while fast and fast.next:
+  # prev = slow -> to get he previous node of slow, then set peve.next = None
+  slow = slow.next
+  fast = fast.next.next
+
+# 1 -> 2 -> 2 -> 1 -> null
+#           ^          ^
+#          slow       fast
+# slow will stop at the next node of the middle one
+
+# 1 -> 2 -> 3 -> 2 -> 1
+#           ^         ^
+#         slow      fast
+# slow will stop at the middle one
+```
+
+- reverse Linked List
+
+```python
 # recursive
 def reverse(head):
   # handle last node and empty list
@@ -171,56 +170,132 @@ class ListNode:
         self.next = next
 
 class LRUCache(object):
-    def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
-        self.pos = {}
-        self.dummy = ListNode()
-        self.tail = self.dummy
-        self.capacity = capacity
+  def __init__(self, capacity):
+      """
+      :type capacity: int
+      """
+      self.pos = {}
+      self.dummy = ListNode()
+      self.tail = self.dummy
+      self.capacity = capacity
 
-    def append(self, node):
-        self.pos[node.key] = self.tail
-        self.tail.next = node
-        self.tail = node
+  def append(self, node):
+      self.pos[node.key] = self.tail
+      self.tail.next = node
+      self.tail = node
 
-    def remove(self, key):
-        prev = self.pos[key]
-        del self.pos[key]
+  def remove(self, key):
+      prev = self.pos[key]
+      del self.pos[key]
 
-        if prev.next == self.tail:
-            self.tail = prev
-        else:
-            prev.next = prev.next.next
-            # move back pos of next node of removed node
-            self.pos[prev.next.key] = prev
+      if prev.next == self.tail:
+          self.tail = prev
+      else:
+          prev.next = prev.next.next
+          # move back pos of next node of removed node
+          self.pos[prev.next.key] = prev
 
-    def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
-        if key not in self.pos:
-            return -1
+  def get(self, key):
+      """
+      :type key: int
+      :rtype: int
+      """
+      if key not in self.pos:
+          return -1
 
-        value = self.pos[key].next.val
-        self.remove(key)
-        self.append(ListNode(key, value))
+      value = self.pos[key].next.val
+      self.remove(key)
+      self.append(ListNode(key, value))
 
-        return self.pos[key].next.val
+      return self.pos[key].next.val
 
-    def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: void
-        """
-        if key in self.pos:
-            self.remove(key)
-            self.append(ListNode(key, value))
-        else:
-            self.append(ListNode(key, value))
-            if len(self.pos) > self.capacity:
-                self.remove(self.dummy.next.key)
+  def put(self, key, value):
+      """
+      :type key: int
+      :type value: int
+      :rtype: void
+      """
+      if key in self.pos:
+          self.remove(key)
+          self.append(ListNode(key, value))
+      else:
+          self.append(ListNode(key, value))
+          if len(self.pos) > self.capacity:
+              self.remove(self.dummy.next.key)
+```
+
+
+# Sliding window
+```python
+''' Use right - left + 1 to calculate number for atMost K
+[1, 2, 1, 2, 3]
+1
+
+12
+ 2
+
+121
+ 21
+  1
+
+1212
+ 212
+  12
+   2
+
+   23
+    3
+'''
+def atMost(s, k):
+  window = {}
+  left = 0
+  count = 0
+
+  # index left and right are both in the window
+  # element in window s[left:right+1]
+  for right in range(len(s)):
+      while len(window) == k and s[right] not in window and left <= right:
+          window[s[left]] -= 1
+
+          if window[s[left]] == 0:
+              del window[s[left]]
+
+          left += 1
+
+      if s[right] not in window:
+          window[s[right]] = 0
+
+      window[s[right]] += 1
+
+      count += right - left + 1
+      # max_len = max(max_len, right - left + 1) find the longest window
+
+  return count
+```
+
+### Prefix Sum
+```python
+[1,3,1,2,] target = 3 #Count 滿足 sum = k 的subarray, k = 3
+```
+首先 需要一個累積總和 (rolling sum) 去確認到當下index的所有數字總和<br/>
+如果能在過去的累積總和當中找到 累積總和 - 目標值k的差值 (意即過去某一index的累積總和) <br/>
+則我們知道 `過去某一段區間的累積總和 + 隨意一段總和為k的區間 = 在當下的累積總和`
+
+```python
+當我們在 index 3 的時候，累積總和為7
+我們知道
+# { 1: 1 }
+# { 4: 1 }
+# { 5: 1 }
+# { 7: 1 }
+```
+累積總和 `7` - 目標值 `3` = 4
+
+過去某一段區間的累積總和 4 (1,3 的累積總和)
+隨意一段總和為k的區間 (此處為 1,2)
+回推我們知道在 index 1 時，累積總和 `4` - 目標值 `3` = `1` 也存在，故在 index 3 之前有兩組滿足目標
+
+我們稱過去一段的累積總和為 Prefix Sum</br>
+```
+Sum of subarray(i, j) = PrefixSum[j] - PrefixSum[i]
 ```

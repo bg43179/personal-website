@@ -27,13 +27,26 @@ respones: 204 no content
 
 ## Authentication
 
-
 ## Http headers
 
 - `Accept`: Informs the server about the types of data that can be sent back.
   Ex:<br/>
   `Accept: 'application/vnd.api+json'` is for json api<br/>
   `Accept: 'application/json'` is for regular json<br/>
+
+## Resource Layer
+  - define how data will be presented thru the api
+  - Can map model attributes or custom logic and hide business logic
+
+## Endpoint Layer
+  - Authentication (session, token, cookie)
+  - Authorization (permission)
+  - routes of the API
+  - parsing params
+  - retrive data for use in resource layer
+
+## JSON API
+  - type and unique ids
 
 ## Idempotency
 

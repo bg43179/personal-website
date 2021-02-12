@@ -23,3 +23,8 @@ note: "React"
 - `componentWillUnmount()`
 
 Notes: Element will be unmounted if its key is remove
+
+-------
+Why do we need to use bind or arrow function to bind function in React with ES6?
+
+A: ES introduce strict node, which cause this to be `undefined`

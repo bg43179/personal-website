@@ -7,6 +7,58 @@ slug: "javasript"
 note: "Javasript"
 ---
 
+## var, let, const
+
+- var: global variable, scoping variable
+- let: scoping variable
+- const:
+## call, apply, bind
+
+## `this`
+[Reference](https://zhuanlan.zhihu.com/p/23804247)
+
+```javascript
+const obj = {
+  sing: function() {
+      console.log('a', this);
+      const anotherFunc = function() {
+          console.log('b', this);
+      }
+      anotherFunc();
+    }
+};
+
+obj.sing();
+// obj
+// window (if this is undefined/null, it will by default point to window in browser)
+
+class Foo {
+  print = () => {
+    console.log(this.x);
+  }
+
+  constructor() {
+      this.x = 1;
+  }
+}
+
+let foo = new Foo();
+foo.print.call({x: 2});
+// 1
+```
+
+### Function Invocation Pattern
+### Method Invocation Pattern
+### Constructor Pattern
+
+### Apply Pattern
+
+### Implicit Binding
+
+When JS is not executed in strict mode, it binds the function to the Object making the function call - this behaviour is called Implicit Binding
+
+### Explicit Binding
+
 ## Events:
 
 - capturing (trickling): from top(outermost) to button(innermost)
@@ -114,10 +166,6 @@ outer.addEventListener('click', e=>{
 
 ### dispatchEvent
 
-## call, apply, bind
-
-## `this`
-
 ## import/export
 ```javascript
 import defaultExport from "module-name";
@@ -139,3 +187,29 @@ var promise = import("module-name");
 - `name`: Name of the module object that will be used as a kind of namespace when referring to the imports.
 - `exportN`: Name of the exports to be imported.
 - `aliasN`: Names that will refer to the named imports.
+
+
+
+```javascript
+
+// create 2d array in javascript
+const grid = Array(10).fill(0).map(() => Array(10).fill(0))
+
+s = 'abc123'
+s.charAt(i) // check get index i
+s.charAt(4).match(/[0-9]/) // check if is digit
+s.repeat(n) // mutliple s by n times
+
+['a', 'b'].join(' ') // a b
+'a' + 'b' // ab
+
+queue = []
+queue.shift()
+queue.psuh(3)
+
+// iterate thru array with iterator
+for (const word of wordDict) { }
+
+[{ a:2 }, { a: 1 }, {a: 3}].sort((a,b) => { if (a.a < b.a) { return -1 } else { return 0 }  })
+// [{ a: 1 }, { a: 2 }, { a: 3 }]
+```
