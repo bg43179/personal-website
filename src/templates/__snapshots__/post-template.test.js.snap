@@ -83,47 +83,61 @@ exports[`PostTemplate renders correctly 1`] = `
         className="post__content"
       >
         <div
-          className="content"
+          className="row"
         >
-          <a
-            className="d-inline-block mt-4 btn btn-outline-dark rounded-pill"
-            href="/page"
-          >
-            <svg
-              className="mx-2"
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 512 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
-              />
-            </svg>
-            <span>
-              Back
-            </span>
-          </a>
-          <h1
-            className="d-flex my-4 justify-content-center"
-          >
-            test
-          </h1>
           <div
-            className="content__body"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>test</p>",
-              }
-            }
+            className="col-xl-2 col-lg-1 col-md-1 col-sm-1 col-1"
+          />
+          <div
+            className="col"
+          >
+            <div
+              className="px-5 pt-5"
+            >
+              <a
+                className="d-inline-block mt-4 btn btn-outline-dark rounded-pill"
+                href="/page"
+              >
+                <svg
+                  className="mx-2"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+                  />
+                </svg>
+                <span>
+                  Back
+                </span>
+              </a>
+              <h1
+                className="d-flex my-4 justify-content-center"
+              >
+                test
+              </h1>
+              <div
+                className="content__body"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<p>test</p>",
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="col-xl-2 col-lg-1 col-md-1 col-sm-1 col-1"
           />
         </div>
       </div>
