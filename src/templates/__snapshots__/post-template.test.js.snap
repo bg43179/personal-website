@@ -4,101 +4,209 @@ exports[`PostTemplate renders correctly 1`] = `
 <div
   className="layout"
 >
-  <div
-    className="post"
+  <nav
+    className="py-2 sticky-top navbar navbar-expand-md navbar-light bg-light"
   >
     <a
-      className="post__home-button"
+      className="mx-4 my-1 navbar-brand"
       href="/"
     >
-      All Articles
-    </a>
-    <div
-      className="post__content"
-    >
-      <div
-        className="content"
-      >
-        <h1
-          className="content__title"
-        >
-          test
-        </h1>
-        <div
-          className="content__body"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<p>test</p>",
-            }
+      <img
+        className="rounded-circle"
+        height="70"
+        src="/test.jpg"
+        style={
+          Object {
+            "opacity": 0.9,
           }
-        />
-      </div>
-    </div>
+        }
+        width="70"
+      />
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
     <div
-      className="post__footer"
+      aria-expanded={null}
+      className="navbar-collapse collapse"
+      id="basic-navbar-nav"
     >
       <div
-        className="meta"
+        className="mr-auto navbar-nav"
+        onKeyDown={[Function]}
       >
-        <p
-          className="meta__date"
+        <a
+          className="mx-2 nav-link"
+          data-rb-event-key="/page"
+          href="/page"
+          onClick={[Function]}
+          onKeyDown={[Function]}
         >
-          Published 
-          1 Sep 2016
-        </p>
-      </div>
-      <div
-        className="tags"
-      >
-        <ul
-          className="tags__list"
+          Articles
+        </a>
+        <a
+          className="mx-2 nav-link"
+          data-rb-event-key="/about"
+          href="/about"
+          onClick={[Function]}
+          onKeyDown={[Function]}
         >
-          <li
-            className="tags__list-item"
-          >
-            <a
-              className="tags__list-item-link"
-              href="/test_0"
-            >
-              test_0
-            </a>
-          </li>
-          <li
-            className="tags__list-item"
-          >
-            <a
-              className="tags__list-item-link"
-              href="/test_1"
-            >
-              test_1
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="author"
-      >
-        <p
-          className="author__bio"
+          About
+        </a>
+        <a
+          className="mx-2 nav-link"
+          data-rb-event-key="/notes"
+          href="/notes"
+          onClick={[Function]}
+          onKeyDown={[Function]}
         >
-          Test bio
-          <a
-            className="author__bio-twitter"
-            href="https://www.twitter.com/#"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <strong>
-              Test name
-            </strong>
-             on Twitter
-          </a>
-        </p>
+          Notes
+        </a>
       </div>
     </div>
+  </nav>
+  <div
+    className="mb-4"
+  >
     <div
-      className="post__comments"
-    />
+      className="post"
+    >
+      <div
+        className="post__content"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xl-2 col-lg-1 col-md-1 col-sm-1 col-1"
+          />
+          <div
+            className="col"
+          >
+            <div
+              className="px-5 pt-5"
+            >
+              <a
+                className="d-inline-block mt-4 btn btn-outline-dark rounded-pill"
+                href="/page"
+              >
+                <svg
+                  className="mx-2"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+                  />
+                </svg>
+                <span>
+                  Back
+                </span>
+              </a>
+              <h1
+                className="d-flex my-4 justify-content-center"
+              >
+                test
+              </h1>
+              <div
+                className="content__body"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<p>test</p>",
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="col-xl-2 col-lg-1 col-md-1 col-sm-1 col-1"
+          />
+        </div>
+      </div>
+      <div
+        className="post__footer"
+      >
+        <div
+          className="meta"
+        >
+          <p
+            className="meta__date"
+          >
+            Published 
+            1 Sep 2016
+          </p>
+        </div>
+        <div
+          className="tags"
+        >
+          <ul
+            className="tags__list"
+          >
+            <li
+              className="tags__list-item"
+            >
+              <a
+                href="/test_0"
+              >
+                <h3
+                  className="mt-0"
+                >
+                  <span
+                    className="badge badge-success"
+                  >
+                    test_0
+                  </span>
+                </h3>
+              </a>
+            </li>
+            <li
+              className="tags__list-item"
+            >
+              <a
+                href="/test_1"
+              >
+                <h3
+                  className="mt-0"
+                >
+                  <span
+                    className="badge badge-success"
+                  >
+                    test_1
+                  </span>
+                </h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="d-flex mx-4 my-4 justify-content-center"
+  >
+    <div
+      className="copyright_content"
+    >
+      Test copyright
+    </div>
   </div>
 </div>
 `;

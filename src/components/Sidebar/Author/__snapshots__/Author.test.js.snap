@@ -2,7 +2,7 @@
 
 exports[`Author renders correctly 1`] = `
 <div
-  className="author"
+  className="mx-3 py-4"
 >
   <a
     href="/"
@@ -10,9 +10,14 @@ exports[`Author renders correctly 1`] = `
     <img
       alt="test"
       className="author__photo"
-      height="75"
+      height="100"
       src="/photo.jpg"
-      width="75"
+      style={
+        Object {
+          "opacity": 0.9,
+        }
+      }
+      width="100"
     />
   </a>
   <h2
@@ -25,10 +30,25 @@ exports[`Author renders correctly 1`] = `
       test
     </a>
   </h2>
-  <p
-    className="author__subtitle"
+  <div
+    className="text-muted d-flex flex-column"
+    style={
+      Object {
+        "fontSize": "16px",
+      }
+    }
   >
-    test
-  </p>
+    <span>
+      SDE @ Appfolio
+    </span>
+    <span>
+      MS CS '19 @ UW-Madison
+    </span>
+    <span
+      className="mt-2"
+    >
+      Enthusiastic about creating tools to make life better.
+    </span>
+  </div>
 </div>
 `;

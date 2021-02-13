@@ -11,8 +11,8 @@ type Props = {
 const Menu = ({ menu }: Props) => { //eslint-disable-line arrow-body-style, spaced-comment
   return (
     <Nav className="flex-column py-4 rounded">
-      {menu.map((item) => (
-        <Nav.Link href={item.path} className="pl-0">
+      {menu.map((item, idx) => (
+        <Nav.Link key={idx} href={item.path} className="pl-0">
           <Button
             variant="link"
             className="text-secondary border-left"
